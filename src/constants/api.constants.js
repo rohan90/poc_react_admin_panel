@@ -1,0 +1,2 @@
+export const BASE_URL_USER_SERVICE =
+  process.env.REACT_APP_BASE_URL_USER_SERVICE;
