@@ -7,11 +7,11 @@ class AdminHome extends Component {
   state = {};
 
   render() {
-    console.log(this.props);
     const { match } = this.props;
     return (
       <>
-        <MiniDrawer>
+        <MiniDrawer {...this.props}>
+          hello
           <Route
             path={`${match.url}/admin/customer`}
             component={CustomerDashboard}
@@ -20,6 +20,7 @@ class AdminHome extends Component {
             path={`${match.url}/admin/facility`}
             component={FacilityDashboard}
           />
+          what
         </MiniDrawer>
         />
         {/* <Route

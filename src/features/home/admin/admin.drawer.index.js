@@ -161,8 +161,8 @@ export default function MiniDrawer(props) {
           </IconButton>
         </div>
         <Divider />
-        <Link to="/home/admin/customer">customer</Link>
-        <Link to="/home/admin/facility">facility</Link>
+        <Link to={`${props.match.url}/admin/customer`}>customer</Link>
+        <Link to={`${props.match.url}/admin/facility`}>facility</Link>
         {/* <List>
           <ListItem button onClick={onMenuClicked("CUSTOMERS")}>
             <ListItemIcon>
