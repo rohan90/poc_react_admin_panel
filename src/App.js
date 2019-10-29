@@ -13,13 +13,21 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <CustomToolbar title="Portal" />
         <Loader />
+        {/* <CustomToolbar title="Portal" /> */}
         <BrowserRouter>
           <Redirect exact from="/" to="/login" />
           <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/home" component={Home} />
+            <Route
+              {...this.props}
+              path="/login"
+              render={props => <Login {...this.props} />}
+            />
+            <Route
+              {...this.props}
+              path="/home"
+              render={props => <Home {...this.props} />}
+            />
           </Switch>
         </BrowserRouter>
       </Provider>

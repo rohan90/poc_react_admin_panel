@@ -3,6 +3,7 @@ import MiniDrawer from "./admin.drawer.index";
 import CustomerDashboard from "../../customers/customer.index";
 import FacilityDashboard from "../../facilities/facility.index";
 import { Route } from "react-router-dom";
+import { PageContainer } from "./admin.style";
 class AdminHome extends Component {
   state = {};
 
@@ -10,27 +11,17 @@ class AdminHome extends Component {
     const { match } = this.props;
     return (
       <>
-        <MiniDrawer {...this.props}>
-          hello
+        <MiniDrawer {...this.props} />
+        <PageContainer isExpanded={this.props.isExpanded} align>
           <Route
-            path={`${match.url}/admin/customer`}
+            path={`${match.url}/admin/customers`}
             component={CustomerDashboard}
           />
           <Route
-            path={`${match.url}/admin/facility`}
+            path={`${match.url}/admin/facilities`}
             component={FacilityDashboard}
           />
-          what
-        </MiniDrawer>
-        />
-        {/* <Route
-          path={`${match.url}/admin/customer`}
-          component={CustomerDashboard}
-        />
-        <Route
-          path={`${match.url}/admin/facility`}
-          component={FacilityDashboard}
-        /> */}
+        </PageContainer>
       </>
     );
   }

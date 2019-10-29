@@ -89,9 +89,11 @@ export default function MiniDrawer(props) {
 
   function handleDrawerOpen() {
     setOpen(true);
+    this.props.dispatch(openDrawer())
   }
 
   function handleDrawerClose() {
+    this.props.dispatch.(closeDrawer())
     setOpen(false);
   }
 
@@ -161,8 +163,8 @@ export default function MiniDrawer(props) {
           </IconButton>
         </div>
         <Divider />
-        <Link to={`${props.match.url}/admin/customer`}>customer</Link>
-        <Link to={`${props.match.url}/admin/facility`}>facility</Link>
+        <Link to={`${props.match.url}/admin/customers`}>customer</Link>
+        <Link to={`${props.match.url}/admin/facilities`}>facility</Link>
         {/* <List>
           <ListItem button onClick={onMenuClicked("CUSTOMERS")}>
             <ListItemIcon>
@@ -190,7 +192,6 @@ export default function MiniDrawer(props) {
           ))}
         </List>
       </Drawer>
-      <main className={classes.content}>{props.children}</main>
     </div>
   );
 }

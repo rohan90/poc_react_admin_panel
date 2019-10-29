@@ -23,7 +23,7 @@ class Login extends Component {
   }
 
   onComponentDidMount() {
-    this.props.dispatch(setTitle("Login"));
+    // this.props.dispatch(setTitle("Login"));
   }
 
   showLoader = () => {
@@ -40,17 +40,18 @@ class Login extends Component {
       password: this.state.password
     };
 
-    this.service.performLogin(payload).then(
-      success => {
-        this.hideLoader();
-        Log.info("login successfull");
-        this.setState({ isLoggedIn: true });
-      },
-      error => {
-        this.hideLoader();
-        Log.info("login failed" + error);
-      }
-    );
+    this.setState({ isLoggedIn: true });
+    // this.service.performLogin(payload).then(
+    //   success => {
+    //     this.hideLoader();
+    //     Log.info("login successfull");
+    //     this.setState({ isLoggedIn: true });
+    //   },
+    //   error => {
+    //     this.hideLoader();
+    //     Log.info("login failed" + error);
+    //   }
+    // );
   };
 
   onUsernameEntered = event => {
